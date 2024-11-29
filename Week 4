@@ -1,0 +1,41 @@
+import os
+
+def read_file(file_name):
+    
+    try:
+        with open(file_name, "r") as file:
+            return file.read()
+    except FileNotFoundError:
+        print(f"Oops: {file_name} not found.")
+        return None
+
+def write_file(file_name, content):
+    
+    try:
+        with open(file_name, "w") as file:
+            file.write(content)
+        print(f"Content written to {file_name}.")
+    except IOError as e:
+        print(f"Error writing to file: {e}")
+
+file_name = "source.txt"
+modified_file_name = "modified.txt"
+
+content = read_file(file_name)
+if content:
+    modified_content = content.lower() 
+    write_file(modified_file_name, modified_content)
+
+
+
+filename = input("Enter the filename to read: ")
+
+try:
+    with open(filename, "r") as file:
+        print(filename.read())
+except FileNotFoundError:
+    print("Oops: The file does not exist.")
+except PermissionError:
+    print("Error: Permission denied when accessing the file.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
