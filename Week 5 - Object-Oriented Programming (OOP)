@@ -1,1 +1,60 @@
+# Class representing a Smartphone
+class Smartphone:
+    def __init__(self, brand, model, storage, battery, ios_version):
+        self.brand = brand  # Brand of the smartphone
+        self.model = model  # Model name
+        self.storage = storage  # Storage in GB
+        self.battery = battery  # Battery percentage
+        self.ios_version = ios version 
+
+    # Method to display smartphone details
+    def display_info(self):
+        print(f"Brand: {self.brand}")
+        print(f"Model: {self.model}")
+        print(f"Storage: {self.storage}GB")
+        print(f"Battery: {self.battery}%")
+        print(f"ios_version: {self.ios_version}")
+    
+    # Method to simulate a phone call
+    def make_call(self, number):
+        print(f"Calling {number}...")
+
+    # Method to simulate charging the phone
+    def charge_phone(self, charge_amount):
+        self.battery += charge_amount
+        if self.battery > 100:
+            self.battery = 100
+        print(f"Charging... New battery level: {self.battery}%")
+
+# Create an instance of Smartphone
+phone1 = Smartphone("Apple", "iPhone 14", 128, 50, 17.1)
+phone1.display_info()  # Display phone details
+phone1.make_call("1234567890")  # Make a call
+phone1.charge_phone(30)  # Charge the phone
+
+
+class Vehicle:
+    def move(self):
+        pass  
+
+class Car(Vehicle):
+    def move(self):
+        print("Driving")
+
+class Plane(Vehicle):
+    def move(self):
+        print("Flying")
+
+class Boat(Vehicle):
+    def move(self):
+        print("Sailing")
+
+car = Car()
+plane = Plane()
+boat = Boat()
+
+# Call the move method for each object
+car.move()  # Output: Driving
+plane.move()  # Output: Flying
+boat.move()  # Output: Sailing
 
